@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<!-- working on creating a simple framework to display the P5 canvas element and controls. -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="headTitle">p5.js example</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../jquery-3.6.0.js"></script>
+  <script src="../p5.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+  <!-- <script src="opensimplex.js"></script> -->
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+</head>
+
+<body>
+  <div id="main" class="flex-container">
+    <div id="one" class="control-panel"></div>
+    <div id="sketch-holder" class="display-canvas">
+      <!-- Our sketch will go here -->
+      </div>
+  </div>
+ 
+  <p>Click the button and each will perform some dynamic function!</p>
+  <div id="main">
+      <input type="button" id="btAdd" value="Add Element" class="bt" />
+      <input type="button" id="btRemove" value="Remove Element" class="bt" />
+      <input type="button" id="btRemoveAll" value="Remove All" class="bt" /><br />
+  </div>
+
+</body>
+<script src="mover.js"></script>
+<!-- <script src="setup.js"></script> -->
+<script src="sketch.js"></script>
+</html>
