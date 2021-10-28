@@ -67,12 +67,13 @@ html, body {
     border-radius: 4px;
     text-align: center;
     vertical-align: center;
+
     height: 20px;
+    /* padding: 50px; */
     padding-top: 3px;
     border: 5px;
     margin: 2px;
     box-shadow: 2px 2px 2px grey;
-    user-select: none;
   }
  .btnButton:hover {
    background-color: lightgray;

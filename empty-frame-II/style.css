@@ -25,7 +25,7 @@ html, body {
     align-items: flex-start;
     padding: 10;
     margin: 10;
-    //list-style: none;
+    /* list-style: none; */
   }
   
   .control-panel{
@@ -42,7 +42,7 @@ html, body {
     border-style: transparent;
     display: flex;
     flex-direction: column;
-    //flex-flow: nowrap;    
+    /* flex-flow: nowrap;     */
     justify-content: flex-start;
     align-items: stretch;
   }
@@ -58,9 +58,26 @@ html, body {
     font-size: 3em;
     text-align: left;
     border-style: transparent;
-    //align-self: flex-start;
+    /* align-self: flex-start; */
 
   }
+
+  .btnDisplay {
+    background-color:white;
+    border-radius: 0px;
+    text-align: center;
+    vertical-align: center;
+    height: 20px;
+    padding-top: 3px;
+    border: 1px; 
+    border-color:grey;
+    border-style:solid;
+    margin: 0px;
+    /* box-shadow: 2px 2px 2px grey; */
+    user-select: none;
+    font-weight: normal;
+  }
+
 
   .btnButton {
     background-color:white;
@@ -71,9 +88,10 @@ html, body {
     padding-top: 3px;
     border: 5px;
     margin: 2px;
-    box-shadow: 2px 2px 2px grey;
+    box-shadow: 2px 2px 2px darkolivegreen;
     user-select: none;
   }
+
  .btnButton:hover {
    background-color: lightgray;
    cursor:pointer;
