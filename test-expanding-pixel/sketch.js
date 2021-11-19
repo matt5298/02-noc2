@@ -1,8 +1,14 @@
+let pg;
 function setup() {
-  // put setup code here
-  crateCanvas ()
+  createCanvas(200, 200);
+  pg = createGraphics(100, 100);
 }
 
 function draw() {
-  // put drawing code here
+  background(200);
+  pg.background(100);
+  pg.noStroke();
+  pg.ellipse(pg.width / 2, pg.height / 2, 50, 50);
+  image(pg, 50, 50);
+  image(pg, 0, 0, 50, 50);
 }

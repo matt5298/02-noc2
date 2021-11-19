@@ -21,7 +21,7 @@
 
 // 1=yes, 0=no
 var startImageYes = 0;
-var filterStoredImage = filterStoredImage1;
+var filterStoredImage = filterStoredImage4;
 var imageStored;
 var imageDisplayed;
 var imageCaptured;
