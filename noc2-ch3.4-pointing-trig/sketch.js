@@ -1,5 +1,6 @@
 "use strict";
 
+var newTimer;
 
 function setup() {
   // Set the title of the html page here
@@ -36,6 +37,9 @@ function setup() {
 
 function reset(){
   //put code here to reset the script.  Should be the same code to start the application
+  var startTime = new Date();
+  console.log(startTime)
+  newTimer = new Timer(startTime,100,100);
 }
 
 function alertAlert(messageString){
@@ -46,5 +50,25 @@ function draw() {
   background(51);
 
   // put drawing code here
+  this.newTimer.show();
+  // if (mouseIsPressed) {
+    // if (mouseButton === RIGHT) {
+      // if (newTimer.overTimer()){
+        // this.newTimer.showMore();
+      // }
+    // }
+  // }
 }
 
+function mousePressed() {
+  if (mouseButton === LEFT){
+    if (newTimer.overTimer()) {
+    newTimer.setMouseOffset(mouseX, mouseY);
+    }
+  }
+}
+function mouseDragged() {
+  if (newTimer.overTimer()) {
+    newTimer.setCoord(mouseX, mouseY);
+  }
+}

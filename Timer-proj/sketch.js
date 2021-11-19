@@ -13,7 +13,9 @@ function setup() {
   var sizeCanvasY = 550;
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
 
-  
+  //////////////////////////////////////////////////
+  // HTML manipulation
+  /////////////////////////////////////////////////
   // set the html dom parent
   myCanvas.parent('sketch-holder');
   // setup the controll panel
@@ -22,39 +24,37 @@ function setup() {
   $('.control-panel').css("height",sizeCanvasY);
   $('.display-canvas').css("height",sizeCanvasY);
   $('.display-canvas').css("width",sizeCanvasX);
-  
-  // add control buttons
+    // add control buttons
   $('.control-panel').append($("<div />",{id: "btnReset", "class":"btnButton"}))
   $('#btnReset').text('Reset');
-  // reset by calling setup function
   $('#btnReset').click(reset);
 
   $('.control-panel').append($("<div />",{id: "btntwo", "class":"btnDisplay"}))
   $('#btntwo').text('Button Two');
   $('#btntwo').click(function(){ alertAlert('Hello Alert World')});
-
+  ////////////////////////////////////////////////////
+  // start the program
+  ///////////////////////////////////////////////////
   reset();
 }
 
 function reset(){
-  //put code here to reset the script.  Should be the same code to start the application
+  // Start/Reset the application
+  // create the object that is doing the timing
   var timerSimple = new TimerSimple();
   //console.log(startTime)
+  // create the object that displays the timer and pass it to it.
   timerDisplay = new TimerDisplay(timerSimple,100,100);
   //console.log('Start timer simple: ' + timer1.startTime)
 }
 
+// right mouse button listener
 (function() {
-
-  "use strict";
-
   document.addEventListener( "contextmenu", function(e) {
     e.preventDefault();
     console.log(e);
   });
-
 })();
-
 
 function alertAlert(messageString){
   window.alert(messageString)
@@ -62,16 +62,14 @@ function alertAlert(messageString){
 
 function draw() {
   background(51);
-
-  // put drawing code here
   this.timerDisplay.show();
-  // if (mouseIsPressed) {
-    // if (mouseButton === RIGHT) {
-      // if (newTimer.overTimer()){
-        // this.newTimer.showMore();
-      // }
-    // }
-  // }
+  if (mouseIsPressed) {
+    if (mouseButton === RIGHT) {
+      if (timerDisplay.overTimer()){
+        timerDisplay.showMore();
+      }
+    }
+  }
 }
 
 function mousePressed() {

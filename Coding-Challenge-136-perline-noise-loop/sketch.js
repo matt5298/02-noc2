@@ -1,19 +1,21 @@
 "use strict";
 
+var newTimer;
 
 function setup() {
   // Set the title of the html page here
-  var myTitle = 'Hello World P5.js'
+  var myTitle = 'Polar Perlin Noise Loop'
   $("#headTitle").text(myTitle);
 
   // create canvas
-  var sizeCanvasX = 550;
-  var sizeCanvasY = 550;
+  var sizeCanvasX = 600;
+  var sizeCanvasY = 600;
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
 
   
   // set the html dom parent
   myCanvas.parent('sketch-holder');
+
   // setup the controll panel
   //$('.control-panel').text(myTitle);
   // adjust the size of the elements to match the canvas size set above
@@ -36,6 +38,7 @@ function setup() {
 
 function reset(){
   //put code here to reset the script.  Should be the same code to start the application
+
 }
 
 function alertAlert(messageString){
@@ -44,7 +47,23 @@ function alertAlert(messageString){
 
 function draw() {
   background(51);
+  // translate(width/2, height/2);
+  stroke(255);
+  strokeWeight(1);
+  noFill();
+  // beginShape();
+  // for (let a = 0; a < TWO_PI; a+= 0.01){
+  //   let r = random(30,100);
+  //   let x = r * cos(a);
+  //   let y = r * sin(a);
+  //   vertex(x,y);
+  // }
+  for (let x = 0; x < width; x += 0.1){
+     let y = (cos(x)*10)+ (height/2);
+    // let y = 10;
+    point(x,y);
+  }
 
-  // put drawing code here
+  // endShape();
 }
 

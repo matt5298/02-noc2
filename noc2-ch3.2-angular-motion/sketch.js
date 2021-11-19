@@ -1,9 +1,16 @@
 "use strict";
 
+var x;
+var y;
+var a;
+
+var aVelocity;
+var aAcceleration;
+
 
 function setup() {
   // Set the title of the html page here
-  var myTitle = 'Hello World P5.js'
+  var myTitle = 'Angular Motion'
   $("#headTitle").text(myTitle);
 
   // create canvas
@@ -36,6 +43,12 @@ function setup() {
 
 function reset(){
   //put code here to reset the script.  Should be the same code to start the application
+  x = 0;
+  y = 0;
+  a = 0;
+  aVelocity = 0;
+  aAcceleration = .05;
+
 }
 
 function alertAlert(messageString){
@@ -43,8 +56,34 @@ function alertAlert(messageString){
 }
 
 function draw() {
-  background(51);
+  
+   background(140);
+  fill(255);
+  stroke(255);
+  
+  drawBaton(width/2,height/2,a);
 
-  // put drawing code here
+  // code for velocity and acceleration
+ aVelocity += aAcceleration;
+ a += aVelocity
+ console.log(aVelocity);
+}
+
+function drawBaton(x,y){
+  //translate to the x,y
+  push();
+  translate(x,y);
+  rotate(radians(a));
+  stroke(50,255);
+  fill(255,255);
+  //make it a horizontal batton to begin with
+  //circles will be a radius of 5
+  ellipse( -50,0,10);
+  ellipse( 50,0,10);
+  line(-45,0,45,0);
+  stroke(color('red'),100);
+  strokeWeight(4);
+  point(0,0);
+  pop();
 }
 

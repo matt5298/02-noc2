@@ -74,14 +74,15 @@ class Mover {
         append(this.forces, this.vel);
         append(this.forceColor, 'green');
         // set color according to velocity
-        this.color = this.vel.mag();
+        this.color = this.vel.mag()*10;
 
     };
     show(){
         stroke(255);
         //fill(255,100);
-        //colorMode(RGB,100);
-        fill(200,100);
+        colorMode(RGB,100);
+        //fill(noise(this.color)*100,noise(this.color)*10,noise(this.color)*50,100);
+        fill(30);
         strokeWeight(2);
         ellipse(this.pos.x,this.pos.y,this.r*2);      
         // add the forces

@@ -86,11 +86,11 @@ class TimerDisplay{
         rect(this.infoX, this.infoY, 400, 50);
         stroke(0);
         fill(0);
-        text('Started: ' + this.timer.getStartTime(),this.infoX+5, this.infoY+15)
+        text('Started: ' + this.timer.startTime,this.infoX+5, this.infoY+15)
         stroke(0);
         fill(0);
         // console.log(this.now);
-        //text('Current: ' + this.now, this.infoX+5, this.infoY+35)
+        text('Stopped: ' + this.timer.stopTime, this.infoX+5, this.infoY+35)
     }
 
     overTimer() {

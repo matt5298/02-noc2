@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style.css">
   <script src="../jquery-3.6.0.js"></script>
   <script src="../p5.js"></script>
+  <script src="./src/CCapture.js"></script>
+  <script src="./src/webm-writer-0.2.0.js"></script>
+  <script src="./src/download.js"></script>
   <!-- <script src="opensimplex.js"></script> -->
   <!-- <script src="../addons/p5.sound.js"></script> -->
 </head>
@@ -21,7 +24,15 @@
       </div>
   
   </div>
- 
+<script>
+   var capturer = new CCapture ({
+     format: 'webm',
+     framerate: 30, 
+     verbose: true
+   });
+
+</script>
+
 </body>
 <script src="sketch.js"></script>
 </html>

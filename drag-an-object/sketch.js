@@ -16,13 +16,15 @@ function draw() {
   background(51);
   noFill();
   stroke(255);
+
+  // this lags less then the separte function mouseDragged
   if (mouseIsPressed){
     x = mouseX;
     y = mouseY;
   }
   rect(x,y,w,h);
 }
-
+// If run this function the square lags more behind the mouse
 // function mouseDragged(e){
 //   x = mouseX
 //   y = mouseY

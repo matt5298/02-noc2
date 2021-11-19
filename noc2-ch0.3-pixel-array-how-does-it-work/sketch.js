@@ -16,6 +16,8 @@ function setup() {
   createCanvas(320, 240);
   // for dealing with high def displays
   pixelDensity(1);
+  frameRate(1);
+  
 }
 
 function draw() {

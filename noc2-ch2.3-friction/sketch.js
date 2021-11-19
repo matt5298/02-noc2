@@ -18,7 +18,7 @@ function setup() {
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
 
   // Configuring the web page
-  background(51);
+  //background(100);
   
   // set the html dom parent
   myCanvas.parent('sketch-holder');
@@ -63,7 +63,7 @@ function alertAlert(){
 }
 
 function draw() {
-  background(51);
+  background(15);
   for (let mover of movers){
     if (mouseIsPressed){
       let wind = createVector(0.2,0);
