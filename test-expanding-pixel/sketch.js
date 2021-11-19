@@ -1,14 +1,21 @@
-let pg;
+
+function preload(){
+  img = loadImage("grid.jpg");
+  newImg = createImage(400,400);
+  newImg2 = createImage(400,400);
+}
+
 function setup() {
-  createCanvas(200, 200);
-  pg = createGraphics(100, 100);
+  createCanvas(400, 400);
+  background(100);
+  image(img,0,0);
 }
 
 function draw() {
-  background(200);
-  pg.background(100);
-  pg.noStroke();
-  pg.ellipse(pg.width / 2, pg.height / 2, 50, 50);
-  image(pg, 50, 50);
-  image(pg, 0, 0, 50, 50);
+newImg = get();
+image(newImg,0,0);
+// newImg2 = newImg.get(0,0,399,399);
+// image(newImg2,0,0,399,399);
+
+
 }

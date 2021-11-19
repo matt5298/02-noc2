@@ -49,7 +49,7 @@ function setup() {
   var myTitle = 'Feedback Loop 1'
   $("#headTitle").text(myTitle);
   // initialize variables
-  setObj = new set_15();
+  setObj = new set_0();
   // create canvas
   console.log('Canvas Size: ' + str(sizeCanvasX));
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
@@ -78,6 +78,7 @@ function setup() {
 function preload(){
   // add any images that may be used to the arrayImages
   arrayImages[1] = loadImage("frog.jfif");
+  arrayImages[2] = loadImage("grid.jpg");
   imageStored = createImage(sizeCanvasX,sizeCanvasY); 
   imageDisplayed = createImage(sizeCanvasX,sizeCanvasY);
 }
@@ -99,7 +100,7 @@ function draw() {
   //rect(2,2,396,396);
   // get part of the canvas
   
-  imageDisplayed = imageStored.get(0,0,sizeCanvasX,sizeCanvasY);
+  imageDisplayed = imageStored.get(0,0,sizeCanvasX-1,sizeCanvasY-1);
   push();
   filterStoredImage();
   pop();
@@ -113,9 +114,22 @@ function draw() {
   // }
   pop();
   //imageMode(CORNER);
-  imageStored = get(0,0,sizeCanvasX,sizeCanvasY);
+  imageStored = get(0,0,sizeCanvasX-1,sizeCanvasY-1);
 
 }
+
+function NoFilter(){
+  var zoomX = sizeCanvasX + (sizeCanvasX * zoomPercent);
+  var zoomY = sizeCanvasY + (sizeCanvasY * zoomPercent);
+  //imageDisplayed.loadPixels();
+
+  translate(midCanvasX, midCanvasY);
+  rotate(radians(rotateAngle));
+
+  imageMode(CENTER);
+  image(imageDisplayed,0,0,zoomX-1, zoomY-1);
+}
+
 
 function filterStoredImageBasic(){
   var zoomX = sizeCanvasX + (sizeCanvasX * zoomPercent);
@@ -144,6 +158,31 @@ function filterStoredImageBasic(){
   imageMode(CENTER);
   image(imageDisplayed,0,0,zoomX, zoomY);
 }
+
+class set_0  {
+  constructor (){
+    sizeCanvasX = 500;
+    sizeCanvasY = 500;
+    midCanvasX = (sizeCanvasX-1) / 2;
+    midCanvasY = (sizeCanvasY-1) / 2;
+    zoomPercent = 0;
+    rotateAngle = 0;
+    // pixelFactorFunc = function (a) {return a};
+    // pixelFunc = function (a) {return a};
+    // redFunc = function (a) {return a * random(2)};
+    // greenFunc = redFunc;
+    // blueFunc = redFunc;
+    // alphaFunc = function(a) {return 255};
+    filterStoredImage = NoFilter;
+  }
+ initImage (){
+    // load from arrayImages an image or draw to the canvas and get the full canvas
+    imageStored = arrayImages[2];  
+    //  background(200);
+    //  imageStored = get();
+    }
+}
+
 
 class set_1  {
   constructor (){
