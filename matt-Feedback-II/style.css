@@ -22,7 +22,10 @@ html, body {
     justify-content: center;
     
     /* vertical alignment */
-    align-items: flex-start;
+    /* flex-start: top
+      center: center */
+    /* align-items: flex-start; */
+    align-items: center;
     padding: 10;
     margin: 10;
     /* list-style: none; */
@@ -58,7 +61,8 @@ html, body {
     font-size: 3em;
     text-align: left;
     border-style: transparent;
-    /* align-self: flex-start; */
+    display: flex;
+    /* align-self: flex-start; */ */
 
   }
 
@@ -88,7 +92,7 @@ html, body {
     padding-top: 3px;
     border: 5px;
     margin: 2px;
-    box-shadow: 2px 2px 2px darkolivegreen;
+    /* box-shadow: 2px 2px 2px darkolivegreen; */
     user-select: none;
   }
 

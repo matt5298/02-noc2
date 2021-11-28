@@ -49,7 +49,7 @@ function setup() {
   var myTitle = 'Feedback Loop 1'
   $("#headTitle").text(myTitle);
   // initialize variables
-  setObj = new set_0();
+  setObj = new set_5();
   // create canvas
   console.log('Canvas Size: ' + str(sizeCanvasX));
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
@@ -184,6 +184,7 @@ class set_0  {
 }
 
 
+// feedback color 
 class set_1  {
   constructor (){
     sizeCanvasX = 400;
