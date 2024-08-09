@@ -21,7 +21,8 @@
 
 // 1=yes, 0=no
 var startImageYes = 0;
-var filterStoredImage = filterStoredImage4;
+// Change this variable statement to define which image filter will be used.
+var filterStoredImage = filterStoredImage1_1_1_1;
 var imageStored;
 var imageDisplayed;
 var imageCaptured;

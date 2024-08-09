@@ -1,0 +1,141 @@
+/* style.css */
+
+html, body {
+    height: 100%;
+    background-color: gray;
+  }
+
+  .flex-container {
+    height: 100%;
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row nowrap;
+    
+    /* Then we define how is distributed the remaining space */
+    justify-content: center;
+    
+    /* vertical alignment */
+    align-items: flex-start;
+    padding: 10;
+    margin: 10;
+    /* list-style: none; */
+  }
+  
+  .control-panel{
+    background:darkkhaki;
+    padding: 10px;
+    width: 150px;
+    height: 300px;
+    margin-top: 0px;
+    line-height: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    border-style: transparent;
+    display: flex;
+    flex-direction: column;
+    /* flex-flow: nowrap;     */
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .display-canvas {
+    background:lightgray;
+    padding: 10px;
+    width: 400px;
+    height: 300px;
+    margin-top: 0px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: left;
+    border-style: transparent;
+    /* align-self: flex-start; */
+
+  }
+
+  .btnDisplay {
+    background-color:white;
+    border-radius: 0px;
+    text-align: center;
+    vertical-align: center;
+    height: 20px;
+    padding-top: 3px;
+    border: 1px; 
+    border-color:grey;
+    border-style:solid;
+    margin: 0px;
+    /* box-shadow: 2px 2px 2px grey; */
+    user-select: none;
+    font-weight: normal;
+  }
+
+
+  .btnButton {
+    background-color:white;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: center;
+    height: 20px;
+    padding-top: 3px;
+    border: 5px;
+    margin: 2px;
+    box-shadow: 2px 2px 2px darkolivegreen;
+    user-select: none;
+  }
+
+ .btnButton:hover {
+   background-color: lightgray;
+   cursor:pointer;
+ }
+.btnButton:active {
+  background-color: lightgreen;
+}
+
+.sliderText{
+  text-align: center;
+}
+
+.slider {
+  padding: 8px;
+  padding-left: 5px;
+  background: #fcfcfc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  }
+  .slider p {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: Open Sans;
+  padding-left: 30px;
+  color: black;
+  }
+  .slider input[type="range"] {
+  -webkit-appearance:none !important;
+  /*width: 12px;*/
+  height: 2px;
+  background: black;
+  border: none;
+  outline: none;
+  }
+  .slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 10px;
+  height:10px;
+  background: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+  .slider input[type="range"]::-webkit-slider-thumb:hover {
+  background: black;
+  }

@@ -12,7 +12,7 @@ function setup() {
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
 
   
-  // set the html dom parent
+  // set the html dom parent  
   myCanvas.parent('sketch-holder');
   // setup the controll panel
   //$('.control-panel').text(myTitle);

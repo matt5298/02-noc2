@@ -10,6 +10,10 @@ var imageStored;
 var imageDisplayed;
 var imageCaptured;
 var prl=0; // for perlin noise
+var sizeX = 400;
+var sizeY = 400;
+var sizeCanvasX =  500;
+var sizeCanvasY = 500;
 
 function setup() {
   // Set the title of the html page here
@@ -17,8 +21,6 @@ function setup() {
   $("#headTitle").text(myTitle);
 
   // create canvas
-  var sizeCanvasX = 400;
-  var sizeCanvasY = 400;
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
 
   // set the html dom parent
@@ -43,9 +45,9 @@ function setup() {
 // you need to use it immediately.
 
 function preload(){
-  imageStored = createImage(400,400);
-  imageDisplayed = createImage(400,400);
-  imageCaptured = createImage(400,400);
+  imageStored = createImage(sizeCanvasX, sizeCanvasY);
+  imageDisplayed = createImage(sizeCanvasX, sizeCanvasY);
+  imageCaptured = createImage(sizeCanvasX, sizeCanvasY);
 
 }
 
@@ -69,18 +71,30 @@ function draw() {
   // get part of the canvas
   
 //  imageDisplayed = imageStored.get(1,1,398,398);
-  imageDisplayed = imageStored.get(0,0,400,400);
+  imageDisplayed = imageStored.get(0,0,sizeCanvasX, sizeCanvasY);
   //imageDisplayed = imageStored.get(25,25,350,350);
   push();
-  translate(200,200);
+  // a is modified using perlin noise.
   var a = map(noise(prl), 0, 1, -2,2);
+
+  // To show movement you can alter the formula as follows
+  // move left
+  //translate(sizeCanvasX/2+1,sizeCanvasY/2);
+  // move right
+  //translate(sizeCanvasX/2-1,sizeCanvasY/2);
+  // perlin movement
+  //translate(sizeCanvasX/2+(a*10),sizeCanvasY/2+(a*10));
+  //no movement
+  translate(sizeCanvasX/2,sizeCanvasY/2);
   //var a = noise(prl);
    //console.log(a);
   //rotate(radians(a));
-  prl += 0.01;
-  filterStoredImageBlue();
+  prl += 0.1;
+  //filterStoredImageBlue();
+  filterStoredImageRed();
+  //filterStoredImageGreen();
   imageMode(CENTER);
-  image(imageDisplayed,0,0,400,400);
+  image(imageDisplayed,0,0,sizeCanvasX,sizeCanvasY);
   pop();
   push();
   if (mouseIsPressed) {
@@ -91,7 +105,7 @@ function draw() {
   }
   pop();
   //imageMode(CORNER);
-  imageStored = get(0,0,400,400);
+  imageStored = get(0,0,sizeCanvasX, sizeCanvasY);
 
 }
 
@@ -99,7 +113,7 @@ function draw() {
 function initialImage() {
 
   // capture the initial image
-  imageStored = get();
+  //imageStored = get();
   //imageStored = loadImage("frog.jfif");
 
 }

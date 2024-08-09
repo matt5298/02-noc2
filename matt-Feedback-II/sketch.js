@@ -4,6 +4,9 @@
 // start with imageStored
 // manipulate the imageDisplayed and then display it.
 
+// The setObj variable is set to one of the Image Filters in the list below
+// currently you have to manually set that in the Setup function
+
 // Variables
   // Image filters
 // 1  )  Feedback Random Colored Zooming in 
@@ -49,7 +52,8 @@ function setup() {
   var myTitle = 'Feedback Loop 1'
   $("#headTitle").text(myTitle);
   // initialize variables
-  setObj = new set_5();
+  // this sets which filter object will be used.  The filter object controls the animation
+  setObj = new set_9();
   // create canvas
   console.log('Canvas Size: ' + str(sizeCanvasX));
   var myCanvas = createCanvas(sizeCanvasX, sizeCanvasY);
@@ -289,7 +293,7 @@ class set_4  {
     sizeCanvasY = 400;
     midCanvasX = sizeCanvasX / 2;
     midCanvasY = sizeCanvasY / 2;
-    zoomPercent = 0.05;
+    zoomPercent = 0.01;
     rotateAngle = 0;
     pixelFactorFunc = function(a) {return 1};
     pixelFunc = function (a,b) {return a*b };
